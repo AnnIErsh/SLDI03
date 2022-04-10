@@ -9,6 +9,10 @@ import SwiftUI
 
 @main
 struct SLDI03App: App {
+    init() {
+        Configurator.shared.register()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
