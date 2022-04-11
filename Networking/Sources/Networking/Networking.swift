@@ -5,6 +5,12 @@ protocol INetworkSevice: AnyObject {
 }
 
 public class NetworkService: INetworkSevice {
+    public init() {}
+    
+    lazy var urlSession: URLSession? = {
+        return URLSession.shared
+    }()
+    
     public func request(path: String, completion: @escaping (Data?, Error?) -> Void) {
         print("do your request")
         guard let url = URL(string: path) else {
@@ -16,14 +22,21 @@ public class NetworkService: INetworkSevice {
         }
         task?.resume()
     }
-    
-    lazy var urlSession: URLSession? = {
-        return URLSession.shared
-    }()
-    
+
+}
+
+protocol IParsingJsonService: AnyObject {
+    func parseJson<T: Codable>(data: Data?, completion: @escaping (T?) -> Void)
+}
+
+public class ParsingJsonService: IParsingJsonService {
     public init() {}
-    
-    public func doTest() {
-        print("testing...")
+    public func parseJson<T: Codable>(data: Data?, completion: @escaping (T?) -> Void) {
+        if let data = data {
+            let decoder = JSONDecoder()
+            if let json = try? decoder.decode(T.self, from: data) {
+                print(json as Any)
+            }
+        }
     }
 }

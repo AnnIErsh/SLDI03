@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct EmojiModel: Identifiable, Hashable {
-    let id: UUID
+struct EmojiModel: Hashable, Codable {
     let name: String
     let category: String
     let group: String

@@ -10,24 +10,24 @@ import Networking
 
 final class EmojiViewModel: ObservableObject {
     @Injected var network: NetworkService?
+    @Injected var parsed: ParsingJsonService?
     private let url = "https://emojihub.herokuapp.com/api/random"
     @Published var data: [EmojiModel] = []
     
     var dataCopy:Int? {
         didSet {
-//            data = [EmojiModel(id: UUID(), name: "one"),
-//                    EmojiModel(id: UUID(), name: "two"),
-//                    EmojiModel(id: UUID(), name: "three")]
             self.fetchEmoji()
         }
     }
     
     func fetchEmoji() {
-        network?.request(path: url, completion: { data, error in
+        network?.request(path: url, completion: { dat, error in
             if let error = error {
                 print("there is error: \(error.localizedDescription)")
             }
-            print(data as Any)
+            self.parsed?.parseJson(data: dat, completion: {(res: EmojiModel?) in
+                
+            })
         })
     }
 }
