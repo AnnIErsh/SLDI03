@@ -17,6 +17,7 @@
 		E716752A280111F3008693BB /* InjectedWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7167529280111F3008693BB /* InjectedWrapper.swift */; };
 		E716752C28011205008693BB /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E716752B28011205008693BB /* ServiceLocator.swift */; };
 		E716752E2801137F008693BB /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E716752D2801137F008693BB /* Configurator.swift */; };
+		E7A862072805070300119840 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A862062805070300119840 /* Extentions.swift */; };
 		E7E2566128037AB700D46870 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = E7E2566028037AB700D46870 /* Networking */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		E7167529280111F3008693BB /* InjectedWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectedWrapper.swift; sourceTree = "<group>"; };
 		E716752B28011205008693BB /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		E716752D2801137F008693BB /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
+		E7A862062805070300119840 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		E71675082800BF8A008693BB /* SLDI03 */ = {
 			isa = PBXGroup;
 			children = (
+				E7A86205280506E800119840 /* Extentions */,
 				E71675222800ED46008693BB /* Info.plist */,
 				E716751F2800C8B1008693BB /* EmojiScreen */,
 				E71675092800BF8A008693BB /* SLDI03App.swift */,
@@ -113,6 +116,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E7A86205280506E800119840 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				E7A862062805070300119840 /* Extentions.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +207,7 @@
 				E716750A2800BF8A008693BB /* SLDI03App.swift in Sources */,
 				E716752A280111F3008693BB /* InjectedWrapper.swift in Sources */,
 				E716752C28011205008693BB /* ServiceLocator.swift in Sources */,
+				E7A862072805070300119840 /* Extentions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

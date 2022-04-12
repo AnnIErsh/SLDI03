@@ -30,12 +30,13 @@ protocol IParsingJsonService: AnyObject {
 }
 
 public class ParsingJsonService: IParsingJsonService {
+    public var saved: Any?
     public init() {}
     public func parseJson<T: Codable>(data: Data?, completion: @escaping (T?) -> Void) {
         if let data = data {
             let decoder = JSONDecoder()
             if let json = try? decoder.decode(T.self, from: data) {
-                print(json as Any)
+                saved = json
             }
         }
     }
